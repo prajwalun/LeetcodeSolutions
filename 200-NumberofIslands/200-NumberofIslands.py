@@ -1,4 +1,4 @@
-# Last updated: 25/03/2025, 22:11:48
+# Last updated: 25/03/2025, 22:12:06
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
         # if not grid or not grid[0]:
