@@ -1,4 +1,4 @@
-# Last updated: 18/04/2025, 18:11:27
+# Last updated: 24/04/2025, 12:36:22
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
         # nums.sort()
@@ -11,10 +11,11 @@ class Solution:
         # SC: O(1)
 
         # Optimal
-
+        # TC: O(n), SC: O(n)
         elements = set()
-        for i in range(len(nums)):
-            if nums[i] in elements:
+        for num in nums:
+            if num in elements:
                 return True
-            elements.add(nums[i])
+            else:
+                elements.add(num)
         return False
