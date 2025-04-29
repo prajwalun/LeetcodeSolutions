@@ -1,10 +1,11 @@
-# Last updated: 02/04/2025, 17:46:07
+# Last updated: 29/04/2025, 00:50:49
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         res = []
         nums.sort()
 
         for i, a in enumerate(nums):
+            # Sorted so we know that if the number is positive it will never sum to 0
             if a > 0:
                 break
 
@@ -24,5 +25,6 @@ class Solution:
                     r -= 1
                     while nums[l] == nums[l - 1] and l < r:
                         l += 1
-                        
         return res
+            
+
