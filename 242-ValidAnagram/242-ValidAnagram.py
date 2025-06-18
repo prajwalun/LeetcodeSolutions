@@ -1,4 +1,4 @@
-# Last updated: 18/06/2025, 13:55:49
+# Last updated: 18/06/2025, 14:01:02
 from collections import Counter 
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
@@ -22,14 +22,21 @@ class Solution:
 
 
 
-        # COunter
+        # Using hashmap count
 
         if len(s) != len(t):
             return False
-        
-        if Counter(s) == Counter(t):
-            return True
-        return False
+
+        count = [0] * 26
+        for i in range(len(s)):
+            count[ord(s[i]) - ord('a')] += 1
+            count[ord(t[i]) - ord('a')] -= 1
+        for val in count:
+            if val != 0:
+                return False
+        return True
+
+       
     
 
 
