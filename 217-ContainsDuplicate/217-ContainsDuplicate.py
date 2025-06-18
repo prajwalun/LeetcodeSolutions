@@ -1,21 +1,18 @@
-# Last updated: 24/04/2025, 12:36:22
+# Last updated: 18/06/2025, 13:38:13
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
-        # nums.sort()
-        # for i in range(len(nums) - 1):
-        #     if nums[i] == nums[i+1]:
-        #         return True
+        # Brute force
+        # for i in range(len(nums)):
+        #     for j in range(i+1, len(nums)):
+        #         if nums[i] == nums[j]:
+        #             return True
         # return False
 
-        # TC: O(nlogn) + O(n)
-        # SC: O(1)
-
         # Optimal
-        # TC: O(n), SC: O(n)
-        elements = set()
+
+        seen = set()
         for num in nums:
-            if num in elements:
+            if num in seen:
                 return True
-            else:
-                elements.add(num)
+            seen.add(num)
         return False
