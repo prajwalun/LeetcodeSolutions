@@ -1,24 +1,23 @@
-# Last updated: 29/04/2025, 00:50:49
+# Last updated: 19/06/2025, 13:14:22
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         res = []
         nums.sort()
 
         for i, a in enumerate(nums):
-            # Sorted so we know that if the number is positive it will never sum to 0
             if a > 0:
                 break
-
+            # To find duplicates
             if i > 0 and a == nums[i - 1]:
                 continue
-
+            
             l, r = i + 1, len(nums) - 1
             while l < r:
                 threeSum = a + nums[l] + nums[r]
-                if threeSum > 0:
-                    r -= 1
-                elif threeSum < 0:
+                if threeSum < 0:
                     l += 1
+                elif threeSum > 0:
+                    r -= 1
                 else:
                     res.append([a, nums[l], nums[r]])
                     l += 1
@@ -26,5 +25,3 @@ class Solution:
                     while nums[l] == nums[l - 1] and l < r:
                         l += 1
         return res
-            
-
