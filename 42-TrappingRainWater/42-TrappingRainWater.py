@@ -1,4 +1,4 @@
-# Last updated: 29/04/2025, 01:31:26
+# Last updated: 19/06/2025, 13:55:15
 class Solution:
 
     # Two Pointer Approach
@@ -11,7 +11,7 @@ class Solution:
         l, r = 0, len(height) - 1
         leftMax, rightMax = height[l], height[r]
         res = 0
-        
+                
         # Two pointer condition
         while l < r:
             # Checking the minimum of each max
