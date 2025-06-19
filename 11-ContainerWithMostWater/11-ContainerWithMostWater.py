@@ -1,4 +1,4 @@
-# Last updated: 29/04/2025, 00:51:31
+# Last updated: 19/06/2025, 13:33:52
 class Solution:
     def maxArea(self, height: List[int]) -> int:
         # Brute Force
@@ -13,11 +13,12 @@ class Solution:
         l, r = 0, len(height) - 1
 
         while l < r:
-            water_stored = min(height[l], height[r]) * (abs(l - r))
-            res = max(res, water_stored)
-            if height[l] < height[r]:
+            area = (r - l) * min(height[l], height[r])
+            res = max(res, area)
+
+            if height[l] <= height[r]:
                 l += 1
             else:
                 r -= 1
-                
-        return res    
+        return res
+
