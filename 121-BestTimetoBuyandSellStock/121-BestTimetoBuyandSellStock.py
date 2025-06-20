@@ -1,4 +1,4 @@
-# Last updated: 29/04/2025, 20:03:48
+# Last updated: 20/06/2025, 15:59:11
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         l, r = 0, 1
@@ -6,8 +6,8 @@ class Solution:
 
         while r < len(prices):
             if prices[l] < prices[r]:
-                cur_profit = prices[r] - prices[l]
-                maxP = max(maxP, cur_profit)
+                profit = prices[r] - prices[l]
+                maxP = max(maxP, profit)
             else:
                 l = r
             r += 1
