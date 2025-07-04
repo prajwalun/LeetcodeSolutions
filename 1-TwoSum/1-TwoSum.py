@@ -1,4 +1,4 @@
-# Last updated: 04/07/2025, 14:35:16
+# Last updated: 04/07/2025, 14:35:20
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         # for i in range(len(nums)):
@@ -14,4 +14,4 @@ class Solution:
             if diff in prevMap:
                 return [prevMap[diff], i]
             prevMap[n] = i
-        
+        return
